@@ -1,5 +1,5 @@
 .menu button {
-  @apply font-semibold text-gray-400;
+  @apply font-medium text-slate-400;
   @apply h-full px-3 border-b-2 border-transparent;
-  @apply hover:text-gray-700 hover:border-violet-600;
+  @apply hover:text-slate-800 hover:border-violet-600;
 }

@@ -1,1 +1,46 @@
-<p>recipe-list works!</p>
+<button
+  class="
+    py-3
+    px-5
+    bg-violet-700
+    text-white
+    hover:bg-violet-600
+    font-semibold
+    rounded
+  "
+>
+  New Recipe
+</button>
+<!-- List of Item -->
+<div class="mt-5 space-y-4 md:max-w-[50%] lg:max-w-[40%]">
+  <!-- Item -->
+  <div
+    *ngFor="let recipe of recipes"
+    class="
+      w-full
+      flex
+      justify-between
+      gap-5
+      p-4
+      bg-violet-50
+      border border-violet-200
+      rounded
+      hover:shadow-md
+      cursor-pointer
+    "
+  >
+    <div class="space-y-1">
+      <!-- Recipe Title -->
+      <h2 class="text-lg font-semibold text-violet-800">{{ recipe.name }}</h2>
+      <!-- Recipe Description -->
+      <p class="text-slate-500 max-w-[35ch]">
+        {{ recipe.description }}
+      </p>
+    </div>
+    <!-- Recipe Image -->
+    <img
+      [src]="recipe.imagePath"
+      class="rounded-full w-20 border-4 border-white self-start"
+    />
+  </div>
+</div>
