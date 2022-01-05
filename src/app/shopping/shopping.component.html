@@ -1,5 +1,26 @@
 <h2 class="font-semibold text-2xl text-slate-500 mb-2">Shopping List</h2>
 <ul>
-  <li app-shopping-list></li>
-  <li app-shopping-list></li>
+  <li
+    *ngFor="let bahan of belanjaan"
+    [bahan]="bahan"
+    app-shopping-list
+    class="border-b border-b-slate-200"
+  >
+    <!-- Control Button -->
+    <button
+      class="
+        px-3
+        py-1
+        bg-yellow-100
+        text-yellow-500
+        font-medium
+        text-sm
+        rounded
+        self-center
+        hover:bg-yellow-200 hover:text-yellow-600
+      "
+    >
+      Edit
+    </button>
+  </li>
 </ul>

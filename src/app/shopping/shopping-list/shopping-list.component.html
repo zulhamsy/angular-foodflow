@@ -1,19 +1,5 @@
-<div class="flex justify-between py-3 px-2 lg:max-w-[50%]">
-  <p class="text-slate-700 font-medium">Bahan 1</p>
-  <!-- Control Button -->
-  <button
-    class="
-      px-3
-      py-1
-      bg-yellow-100
-      text-yellow-500
-      font-medium
-      text-sm
-      rounded
-      self-center
-      hover:bg-yellow-200 hover:text-yellow-600
-    "
-  >
-    Edit
-  </button>
+<div class="flex justify-between py-3 px-2">
+  <p class="text-slate-700 font-medium">{{ bahan }}</p>
+  <!-- Slot Content -->
+  <ng-content></ng-content>
 </div>

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping.component.css'],
 })
 export class ShoppingComponent implements OnInit {
+  belanjaan = ['Cabe Rawit', 'Cabe Keriting', 'Kentang Emas', 'Paprika Merah'];
   constructor() {}
 
   ngOnInit(): void {}
