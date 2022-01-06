@@ -1,8 +1,15 @@
 <h2 class="font-semibold text-2xl text-slate-500 mb-3">Shopping List</h2>
 <ul>
-  <div app-shopping-list-edit class="mb-3"></div>
+  <div
+    *ngIf="editModal"
+    app-shopping-list-edit
+    class="mb-3"
+    (onCancelEdit)="cancelEdit()"
+    (onSaveEdit)="saveEdit($event)"
+    [inputProp]="currentBahan"
+  ></div>
   <li
-    *ngFor="let bahan of belanjaan"
+    *ngFor="let bahan; let i = index; of: belanjaan"
     [bahan]="bahan"
     app-shopping-list
     class="border-b border-b-slate-200"
@@ -20,6 +27,7 @@
         self-center
         hover:bg-yellow-200 hover:text-yellow-600
       "
+      (click)="toggleEditModal({bahan, i})"
     >
       Edit
     </button>

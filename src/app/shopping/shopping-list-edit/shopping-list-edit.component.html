@@ -9,8 +9,10 @@
       focus:ring focus:ring-violet-500
       outline-none
     "
+    [(ngModel)]="inputProp"
   />
   <button
+    (click)="save()"
     class="
       py-2
       px-3
@@ -24,6 +26,7 @@
     Save
   </button>
   <button
+    (click)="cancel()"
     class="
       py-2
       px-3
