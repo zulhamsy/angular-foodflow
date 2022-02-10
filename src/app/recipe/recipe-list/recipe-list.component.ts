@@ -10,8 +10,8 @@ export class RecipeListComponent implements OnInit {
   @Input() resep: Recipe[];
   @Output() clickResep = new EventEmitter();
 
-  selectResep($event: Recipe) {
-    this.clickResep.emit($event);
+  selectResep(payload: Recipe) {
+    this.clickResep.emit(payload);
   }
 
   constructor() {}

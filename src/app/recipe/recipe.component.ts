@@ -26,8 +26,8 @@ export class RecipeComponent implements OnInit {
     'https://awsimages.detik.net.id/community/media/visual/2021/08/25/resep-nasi-goreng-sosis-ala-warung-bhakti_43.jpeg'
   );
 
-  changeResep($event: Recipe) {
-    this.currentRecipe = $event;
+  changeResep(resep: Recipe) {
+    this.currentRecipe = resep;
   }
 
   constructor() {}
