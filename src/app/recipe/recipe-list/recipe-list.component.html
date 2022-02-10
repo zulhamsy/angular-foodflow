@@ -2,18 +2,9 @@
 <div class="space-y-4">
   <!-- Item -->
   <div
-    *ngFor="let recipe of recipes"
-    class="
-      w-full
-      flex
-      justify-between
-      gap-5
-      p-4
-      shadow shadow-violet-500/30
-      rounded
-      hover:shadow-md hover:bg-violet-50
-      cursor-pointer
-    "
+    *ngFor="let recipe of resep"
+    (click)="selectResep(recipe)"
+    class="w-full flex justify-between gap-5 p-4 shadow shadow-violet-500/30 rounded hover:shadow-md hover:bg-violet-50 cursor-pointer"
   >
     <div class="space-y-1">
       <!-- Recipe Title -->
