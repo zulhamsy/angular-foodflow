@@ -20,26 +20,19 @@ export class DropdownDirective implements OnInit {
     this.renderer.addClass(this.element, 'bg-violet-600');
     this.renderer.addClass(this.element, 'text-white');
   }
-  // isOpen: boolean = false;
-  // @HostBinding('class.hidden') isOpen: boolean = false;
+
   @HostListener('click') toggleOpen(): void {
-    // this.isOpen = !this.isOpen;
     this.menu.classList.toggle('hidden');
   }
 
-  // ngOnChanges(): void {
-  //   let menu: HTMLElement = this.renderer.nextSibling(this.element);
-  //   menu.classList.toggle('hidden', this.isOpen);
-  // }
-
+  // ketika initialization, menu akan berisi element ul/ol yang akan ditoggle class 'hidden' nya saat button diclick
   ngOnInit(): void {
-    // let menu = this.element.nextElementSibling;
     this.menu = this.renderer.nextSibling(this.element);
-    // if (menu instanceof HTMLUListElement || menu instanceof HTMLOListElement) {
-    //   // menu.classList.remove('hidden');
-    //   menu.classList.toggle('hidden');
-    // } else {
-    //   throw TypeError('Sibling is not List Element');
-    // }
+    if (
+      this.menu instanceof HTMLUListElement == false &&
+      this.menu instanceof HTMLOListElement == false
+    ) {
+      throw TypeError('Element Menu bukan UL atau OL');
+    }
   }
 }
