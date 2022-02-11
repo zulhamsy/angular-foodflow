@@ -1,41 +1,18 @@
 <div class="flex gap-2">
   <input
     type="text"
-    class="
-      border border-slate-200
-      rounded
-      p-2
-      flex-1
-      focus:ring focus:ring-violet-500
-      outline-none
-    "
+    class="border border-slate-200 rounded p-2 flex-1 focus:ring focus:ring-violet-500 outline-none"
     [(ngModel)]="inputProp"
   />
   <button
     (click)="save()"
-    class="
-      py-2
-      px-3
-      bg-emerald-500
-      text-white
-      hover:bg-emerald-600
-      font-semibold
-      rounded
-    "
+    class="py-2 px-3 bg-emerald-500 text-white hover:bg-emerald-600 font-semibold rounded"
   >
     Save
   </button>
   <button
     (click)="cancel()"
-    class="
-      py-2
-      px-3
-      bg-white
-      text-slate-500
-      hover:bg-slate-200 hover:text-slate-600
-      font-semibold
-      rounded
-    "
+    class="py-2 px-3 bg-white text-slate-500 hover:bg-slate-200 hover:text-slate-600 font-semibold rounded"
   >
     Cancel
   </button>

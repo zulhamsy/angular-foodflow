@@ -10,11 +10,33 @@
     <p class="text-slate-400">{{ selectedRecipe.description }}</p>
   </div>
   <!-- Manage Button -->
-  <button
-    class="text-xs font-medium text-slate-500 bg-slate-100 hover:bg-slate-200 hover:text-slate-600 self-center px-3 py-1 rounded"
-  >
-    Manage
-  </button>
+  <div class="relative">
+    <button
+      app-dropdown
+      class="text-xs font-medium bg-slate-100 hover:bg-slate-200 hover:text-slate-600 self-center px-3 py-1 rounded"
+    >
+      Manage
+    </button>
+    <ul
+      class="hidden absolute overflow-hidden w-max right-0 top-9 text-sm shadow rounded space-y-5 text-slate-500"
+    >
+      <li
+        class="px-8 py-4 cursor-pointer hover:text-violet-700 hover:bg-violet-200"
+      >
+        Menu 1
+      </li>
+      <li
+        class="px-8 py-4 cursor-pointer hover:text-violet-700 hover:bg-violet-200"
+      >
+        Menu 2
+      </li>
+      <li
+        class="px-8 py-4 cursor-pointer hover:text-violet-700 hover:bg-violet-200"
+      >
+        Menu 3
+      </li>
+    </ul>
+  </div>
 </div>
 <!-- Ingridients -->
 <h4 class="text-slate-500 font-medium text-lg mb-2">Ingridients</h4>
