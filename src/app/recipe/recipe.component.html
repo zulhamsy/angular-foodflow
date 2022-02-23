@@ -4,15 +4,6 @@
   New Recipe
 </button>
 <div class="mt-5 sm:flex sm:gap-6 space-y-7 sm:space-y-0">
-  <div
-    app-recipe-detail
-    class="flex-1 order-last"
-    [selectedRecipe]="currentRecipe"
-  ></div>
-  <div
-    app-recipe-list
-    class="flex-1"
-    [resep]="recipes"
-    (clickResep)="changeResep($event)"
-  ></div>
+  <div app-recipe-detail class="flex-1 order-last"></div>
+  <div app-recipe-list class="flex-1"></div>
 </div>

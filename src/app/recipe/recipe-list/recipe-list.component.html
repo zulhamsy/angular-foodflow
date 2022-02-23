@@ -2,24 +2,10 @@
 <div class="space-y-4">
   <!-- Item -->
   <div
+    app-recipe-item
+    [recipe]="recipe"
     *ngFor="let recipe of resep"
     (click)="selectResep(recipe)"
     class="w-full flex justify-between gap-5 p-4 shadow shadow-violet-500/30 rounded hover:shadow-md hover:bg-violet-50 cursor-pointer"
-  >
-    <div class="space-y-1">
-      <!-- Recipe Title -->
-      <h2 class="text-lg font-semibold text-violet-800">{{ recipe.name }}</h2>
-      <!-- Recipe Description -->
-      <p class="text-slate-500 max-w-[35ch]">
-        {{ recipe.description }}
-      </p>
-    </div>
-    <!-- Recipe Image -->
-    <div class="bg-white border border-violet-300 self-start p-1 rounded-full">
-      <div
-        class="w-16 h-16 rounded-full bg-cover"
-        [ngStyle]="{ backgroundImage: 'url(' + recipe.imagePath + ')' }"
-      ></div>
-    </div>
-  </div>
+  ></div>
 </div>
