@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ShoppingListService } from '../shopping.service';
 
 @Component({
   selector: '[app-shopping-list-edit]',
@@ -7,18 +8,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ShoppingListEditComponent implements OnInit {
   @Output() onCancelEdit = new EventEmitter();
-  @Output() onSaveEdit = new EventEmitter();
-  @Input() inputProp: string;
+  inputProp: string;
 
   cancel() {
     this.onCancelEdit.emit();
   }
 
   save() {
-    this.onSaveEdit.emit(this.inputProp);
+    this.ShoppingService.editIngridient(this.inputProp);
+    this.cancel();
   }
 
-  constructor() {}
+  constructor(private ShoppingService: ShoppingListService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.inputProp = this.ShoppingService.current_ingridient.bahan;
+  }
 }

@@ -1,32 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import { ShoppingListService } from './shopping.service';
 
 @Component({
   selector: '[app-shopping]',
   templateUrl: './shopping.component.html',
   styleUrls: ['./shopping.component.css'],
+  providers: [ShoppingListService],
 })
 export class ShoppingComponent implements OnInit {
-  belanjaan = ['Cabe Rawit', 'Cabe Keriting', 'Kentang Emas', 'Paprika Merah'];
-  editModal = false;
-  currentIndex: number;
-  currentBahan: string;
+  belanjaan: string[] = [];
+  editModal = false; // stay
+  currentIndex: number; // move
+  currentBahan: string; // move
 
-  toggleEditModal({ bahan, i }) {
-    this.editModal = true;
-    this.currentIndex = i;
+  toggleEditModal(bahan: string, index: number) {
+    this.editModal = true; // stay
+    this.currentIndex = index;
     this.currentBahan = bahan;
+    this.ShoppingService.current_ingridient = {
+      index,
+      bahan,
+    };
   }
 
   cancelEdit() {
+    // stay
     this.editModal = false;
   }
 
-  saveEdit(payload: string) {
-    this.belanjaan[this.currentIndex] = payload;
-    this.editModal = false;
+  constructor(private ShoppingService: ShoppingListService) {}
+
+  ngOnInit(): void {
+    this.belanjaan = this.ShoppingService.getList();
   }
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

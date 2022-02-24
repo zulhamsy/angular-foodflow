@@ -5,8 +5,6 @@
     app-shopping-list-edit
     class="mb-3"
     (onCancelEdit)="cancelEdit()"
-    (onSaveEdit)="saveEdit($event)"
-    [inputProp]="currentBahan"
   ></div>
   <li
     *ngFor="let bahan; let i = index; of: belanjaan"
@@ -17,7 +15,7 @@
     <!-- Control Button -->
     <button
       class="px-3 py-1 bg-yellow-100 text-yellow-500 font-medium text-sm rounded self-center hover:bg-yellow-200 hover:text-yellow-600"
-      (click)="toggleEditModal({bahan, i})"
+      (click)="toggleEditModal(bahan, i)"
     >
       Edit
     </button>
