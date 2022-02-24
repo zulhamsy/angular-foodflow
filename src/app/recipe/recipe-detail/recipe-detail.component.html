@@ -42,10 +42,9 @@
   <!-- Ingridients -->
   <h4 class="text-slate-500 font-medium text-lg mb-2">Ingridients</h4>
   <ul class="list-disc list-inside text-violet-500 space-y-1">
-    <li><span class="text-slate-700">Bahan 1</span></li>
-    <li><span class="text-slate-700">Bahan 2</span></li>
-    <li><span class="text-slate-700">Bahan 3</span></li>
-    <li><span class="text-slate-700">Bahan 4</span></li>
+    <li *ngFor="let resep of selectedRecipe.recipe">
+      <span class="text-slate-700">{{ resep }}</span>
+    </li>
   </ul>
 </div>
 <div *ngIf="!selectedRecipe">
