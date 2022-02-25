@@ -20,4 +20,9 @@ export class ShoppingListService {
   editIngridient(payload: string) {
     this.shopping_list[this.current_ingridient.index] = payload;
   }
+
+  addIngridient(payload: string[]) {
+    // this.shopping_list = this.shopping_list.concat(payload);
+    payload.forEach((resep) => this.shopping_list.push(resep));
+  }
 }

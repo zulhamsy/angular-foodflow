@@ -17,8 +17,8 @@ export class DropdownDirective implements OnInit {
     this.element = this.el.nativeElement;
     // element.classList.add('bg-violet-600', 'text-white');
     // Using Renderer
-    this.renderer.addClass(this.element, 'bg-violet-600');
-    this.renderer.addClass(this.element, 'text-white');
+    // this.renderer.addClass(this.element, 'bg-violet-600');
+    // this.renderer.addClass(this.element, 'text-white');
   }
 
   @HostListener('click') toggleOpen(): void {
