@@ -1,5 +1,9 @@
-.menu button {
+button {
   @apply font-medium text-slate-400;
   @apply h-full px-3 border-b-2 border-transparent;
   @apply hover:text-slate-800 hover:border-violet-600;
+}
+
+.active {
+  @apply font-semibold text-slate-800 border-violet-600;
 }

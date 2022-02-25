@@ -6,8 +6,16 @@
   </div>
   <!-- Menu List -->
   <div class="menu self-stretch items-center gap-3 hidden sm:flex">
-    <button routerLink="/">Recipes</button>
-    <button routerLink="/shopping-list">Shopping List</button>
+    <button
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Recipes
+    </button>
+    <button routerLink="/shopping-list" routerLinkActive="active">
+      Shopping List
+    </button>
   </div>
   <!-- Search Field -->
   <input
