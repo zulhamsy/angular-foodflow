@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'shopping-list',
     component: ShoppingComponent,
   },
+  {
+    path: 'shopping/:id',
+    component: ShoppingComponent,
+  },
 ];
 
 @NgModule({

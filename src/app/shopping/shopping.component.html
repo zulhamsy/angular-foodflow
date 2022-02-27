@@ -1,4 +1,7 @@
 <h2 class="font-semibold text-2xl text-slate-500 mb-3">Shopping List</h2>
+<button (click)="testRoutes()" class="p-3 bg-slate-600 text-white">
+  Current IDs: {{ id }}, Change ID Parameter to 200
+</button>
 <ul>
   <div
     *ngIf="editModal"
