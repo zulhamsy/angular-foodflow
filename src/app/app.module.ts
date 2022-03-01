@@ -13,6 +13,8 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping/shopping-list-edit/shopping-list-edit.component';
 import { DropdownDirective } from 'src/shared/dropdown.directive';
+import { RoutingComponent } from './routing/routing.component';
+import { ShowServerComponent } from './routing/show-server/show-server.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'shopping/:id',
     component: ShoppingComponent,
+  },
+  {
+    path: 'routing',
+    component: RoutingComponent,
+  },
+  {
+    path: 'servers',
+    component: ShowServerComponent,
   },
 ];
 
@@ -41,6 +51,8 @@ const routes: Routes = [
     ShoppingListComponent,
     ShoppingListEditComponent,
     DropdownDirective,
+    RoutingComponent,
+    ShowServerComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
   providers: [],

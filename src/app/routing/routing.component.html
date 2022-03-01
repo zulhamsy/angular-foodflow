@@ -1,0 +1,14 @@
+<button
+  class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-5 rounded mb-7"
+>
+  Let's Go
+</button>
+<ul class="border border-slate-300 w-fit divide-y divide-slate-300">
+  <li
+    *ngFor="let server of servers"
+    (click)="showServer(server.id)"
+    class="py-3 px-6 hover:bg-slate-600 hover:text-white cursor-pointer"
+  >
+    {{ server.name }}
+  </li>
+</ul>

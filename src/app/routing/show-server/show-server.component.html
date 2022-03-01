@@ -1,0 +1,5 @@
+<p>Bitch {{ id }}</p>
+<div *ngFor="let selected of server">
+  <p>{{ selected.name }}</p>
+  <p *ngIf="showStatus == 'true'">{{ selected.status }}</p>
+</div>
