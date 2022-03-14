@@ -23,7 +23,7 @@ export class ShowServerComponent implements OnInit {
     this.route.queryParams.subscribe((query) => {
       this.id = query.id;
       this.showStatus = query.show;
+      this.server = this.ServersService.getServerById(this.id);
     });
-    this.server = this.ServersService.getServerById(this.id);
   }
 }

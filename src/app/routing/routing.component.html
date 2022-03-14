@@ -3,7 +3,7 @@
 >
   Let's Go
 </button>
-<ul class="border border-slate-300 w-fit divide-y divide-slate-300">
+<ul class="border border-slate-300 w-fit divide-y divide-slate-300 mb-5">
   <li
     *ngFor="let server of servers"
     (click)="showServer(server.id)"
@@ -12,3 +12,4 @@
     {{ server.name }}
   </li>
 </ul>
+<router-outlet></router-outlet>

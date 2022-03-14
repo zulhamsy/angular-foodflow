@@ -17,25 +17,13 @@ import { RoutingComponent } from './routing/routing.component';
 import { ShowServerComponent } from './routing/show-server/show-server.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: RecipeComponent,
-  },
-  {
-    path: 'shopping-list',
-    component: ShoppingComponent,
-  },
-  {
-    path: 'shopping/:id',
-    component: ShoppingComponent,
-  },
-  {
-    path: 'routing',
-    component: RoutingComponent,
-  },
+  { path: '', component: RecipeComponent },
+  { path: 'shopping-list', component: ShoppingComponent },
+  { path: 'shopping/:id', component: ShoppingComponent },
   {
     path: 'servers',
-    component: ShowServerComponent,
+    component: RoutingComponent,
+    children: [{ path: 'show', component: ShowServerComponent }],
   },
 ];
 

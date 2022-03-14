@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Servers } from './servers.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: null,
 })
 export class ServersService {
   servers: Servers[] = [
