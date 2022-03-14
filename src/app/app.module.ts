@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,20 +16,7 @@ import { DropdownDirective } from 'src/shared/dropdown.directive';
 import { RoutingComponent } from './routing/routing.component';
 import { ShowServerComponent } from './routing/show-server/show-server.component';
 import { EditServerComponent } from './routing/edit-server/edit-server.component';
-
-const routes: Routes = [
-  { path: '', component: RecipeComponent },
-  { path: 'shopping-list', component: ShoppingComponent },
-  { path: 'shopping/:id', component: ShoppingComponent },
-  {
-    path: 'servers',
-    component: RoutingComponent,
-    children: [
-      { path: 'show', component: ShowServerComponent },
-      { path: 'edit', component: EditServerComponent },
-    ],
-  },
-];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -47,7 +34,7 @@ const routes: Routes = [
     ShowServerComponent,
     EditServerComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
