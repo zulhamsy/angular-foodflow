@@ -1,9 +1,16 @@
 <div *ngIf="server.length">
   <p>Bitch {{ id }}</p>
-  <div *ngFor="let selected of server">
+  <div *ngFor="let selected of server" class="mb-4">
     <p>{{ selected.name }}</p>
     <p *ngIf="showStatus == 'true'">{{ selected.status }}</p>
   </div>
+  <!-- Edit Button -->
+  <button
+    class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-4 rounded"
+    (click)="onEditServer()"
+  >
+    Edit Server Info
+  </button>
 </div>
 <div *ngIf="!server.length && !id">
   <p class="font-semibold text-lg text-slate-600">Please select the server</p>

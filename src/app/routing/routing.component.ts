@@ -24,7 +24,7 @@ export class RoutingComponent implements OnInit {
 
   showServer(id: number): void {
     this.router.navigate(['show'], {
-      queryParams: { id: id, show: true },
+      queryParams: { id: id, show: true, allowEdit: id == 1 ? true : false },
       relativeTo: this.route,
     });
   }

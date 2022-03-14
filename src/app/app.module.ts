@@ -15,6 +15,7 @@ import { ShoppingListEditComponent } from './shopping/shopping-list-edit/shoppin
 import { DropdownDirective } from 'src/shared/dropdown.directive';
 import { RoutingComponent } from './routing/routing.component';
 import { ShowServerComponent } from './routing/show-server/show-server.component';
+import { EditServerComponent } from './routing/edit-server/edit-server.component';
 
 const routes: Routes = [
   { path: '', component: RecipeComponent },
@@ -23,7 +24,10 @@ const routes: Routes = [
   {
     path: 'servers',
     component: RoutingComponent,
-    children: [{ path: 'show', component: ShowServerComponent }],
+    children: [
+      { path: 'show', component: ShowServerComponent },
+      { path: 'edit', component: EditServerComponent },
+    ],
   },
 ];
 
@@ -41,6 +45,7 @@ const routes: Routes = [
     DropdownDirective,
     RoutingComponent,
     ShowServerComponent,
+    EditServerComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
   providers: [],
