@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './app-guard.service';
 
 import { RecipeComponent } from './recipe/recipe.component';
 import { EditServerComponent } from './routing/edit-server/edit-server.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {
     path: 'servers',
     component: RoutingComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'show', component: ShowServerComponent },
       { path: 'edit', component: EditServerComponent },
