@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UserService {
-  private isLogged = false;
+  private isLogged = true;
 
   isUserLogged() {
     return this.isLogged;

@@ -16,6 +16,7 @@ const routes: Routes = [
     path: 'servers',
     component: RoutingComponent,
     canActivate: [AuthGuard],
+    canDeactivate: [AuthGuard],
     children: [
       { path: 'show', component: ShowServerComponent },
       { path: 'edit', component: EditServerComponent },

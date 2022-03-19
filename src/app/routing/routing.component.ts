@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServersService } from './servers.service';
 import { Servers } from './servers.model';
+import { NeedDeactivate } from '../app-guard.service';
 
 @Component({
   selector: 'app-routing',
@@ -9,7 +10,7 @@ import { Servers } from './servers.model';
   styleUrls: ['./routing.component.css'],
   providers: [ServersService],
 })
-export class RoutingComponent implements OnInit {
+export class RoutingComponent implements OnInit, NeedDeactivate {
   constructor(
     private router: Router,
     private ServersService: ServersService,
@@ -27,5 +28,14 @@ export class RoutingComponent implements OnInit {
       queryParams: { id: id, show: true, allowEdit: id == 1 ? true : false },
       relativeTo: this.route,
     });
+  }
+
+  canExit(): boolean {
+    console.log('can Exit function called');
+    if (confirm('Do you want to exit? | canDeactivate Function')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
