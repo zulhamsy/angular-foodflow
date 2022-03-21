@@ -2,7 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 @Injectable({
-  providedIn: null,
+  providedIn: 'root',
 })
 export class RecipeService {
   private recipes: Recipe[] = [
@@ -20,8 +20,14 @@ export class RecipeService {
     ),
   ];
 
-  getRecipes() {
-    return this.recipes.slice();
+  getRecipes(): Promise<any> {
+    // return this.recipes.slice();
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this.recipes.slice());
+      }, 2000);
+    });
+    return promise;
   }
 
   selectedRecipe = new EventEmitter<Recipe>();
